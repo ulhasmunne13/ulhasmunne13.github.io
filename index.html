@@ -3,126 +3,36 @@
 <head>
 <meta charset="utf-8">
 <title>Registration Form</title>
-<script type="text/javascript">
-function verify()
-{
-	var Firstname = document.getElementById(" First Name");
-	var Lastname = document.getElementById(" last Name");
-   	var email = document.getElementById("email")
-	var gender = document.getElementsByName("gender");
-	var pass = document.getElementById("pass");
-	var mobile No = document.getElementById("moble No");
-	var msg = new Array();
-	var flag = 1;
-	var message = "Following Details are Required\n";
-	var message2 = "Following Details are Required<br>";
-
-
-	if(name.value == "")
+<style type="text/css">
+	body
 	{
-		msg[0] = " First Name is Required";
-		flag = 0;
-	} else { msg[0] = ""; }
-
-	if(name.value == "")
-	{
-		msg[1] = " Last Name is Required";
-		flag = 0;
-	} else { msg[1] = ""; }
-
-
-
-	if (email.value=="") {
-		msg[2] = "Email Is Required"
+		background: #373B44;  
+	  background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  
+	  background: linear-gradient(to bottom, #4286f4, #373B44);
 	}
-	else{ msg[2] = "";}
-
-
-
-	if(gender[0].checked == false && gender[1].checked == false)
+	h1
 	{
-		msg[3] = "Select Gender";
-		flag = 0;
-	} else { msg[3] = ""; }
-
-
-		
-	if(pass.value == "")
-	{
-		msg[4] = "Password is Required";
-		flag = 0;
-	} else { msg[4] = ""; }
-
-
-	
-	if(pass.value.length < 8)
-	{
-		msg[5] = "Password must be 8 characters long";
-		flag = 0;
-	} else { msg[5] = ""; }
-
-	if(pass.value.length < 10)
-	{
-		msg[6] = " Mobile no  must be 10 characters long";
-		flag = 0;
-	} else { msg[6] = ""; }
-
-
-	
-	if(flag == 0)
-	{
-		// Show Error Messages
-		for(var x=0;x<=6;x++)
-		{
-			if(msg[x] != "")
-			{
-				message += msg[x] + "\n";
-				message2 += msg[x] + "<br>";
-			}
-		}
-		alert(message);
-		document.getElementById("Ulhas Munne").innerHTML = "<p style='color:red;'>"+message2+"</p>";
-		return false;
-	}
-	else
-	{
-		return true;
-	}
-}
-
-</script>
-</head>
-<body><style type="text/css">
-body
-{	
-	background: #373B44;  
-   background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  
-   background: linear-gradient(to bottom, #4286f4, #373B44);
-}
-h1
-{
-    color: #fff;
+		color: #fff;
     font-weight: bold;
-}
-table 
-{
-box-sizing: border-box;
-overflow: hidden;
-margin: 4em auto;
-border-collapse: collapse;
-min-width: 23em; width: 70%; max-width: 30em;
-border-radius: .5em;
-box-shadow: 0 0 .5em #000;
-} 
- td
+  }
+	table
+	{
+		box-sizing: border-box;
+		overflow: hidden;
+		margin: 4em auto;
+		border-collapse: collapse;
+		min-width: 23em; width: 70%; max-width: 30em;
+		border-radius: .5em;
+		box-shadow: 0 0 .5em #000;
+	} 
+ 	td
+ 	{
+ 		color: #fff;
+   	font-weight: bold;
+	} 
+ .btn
  {
-   color: #fff;
-   font-weight: bold;
-
- } 
- .btn 
- {
-  cursor: pointer;
+ 	cursor: pointer;
   outline: none;
   border : none;
   background-color: #ffffff;
@@ -131,24 +41,99 @@ box-shadow: 0 0 .5em #000;
   font-size: 1.2rem;
   color: #000000;
   background-size: 100% 100%;
-}
+	}
  .footer
  {
-		background-color:rgba(0,0,0,0.9);
-		width:100%;
-		box-shadow:0px 0px 25px rgba(0,0,0,1.00);
-		padding:5px 0px;
-		bottom:0;
-		position:fixed;
-		left: 0px;
-		font-family:'d';
-		font-size:15px;
-		color:#FFF;
-		letter-spacing: 5px;
+ 	background-color:rgba(0,0,0,0.9);
+	width:100%;
+	box-shadow:0px 0px 25px rgba(0,0,0,1.00);
+	padding:5px 0px;
+	bottom:0;
+	position:fixed;
+	left: 0px;
+	font-family:'d';
+	font-size:15px;
+	color:#FFF;
+	letter-spacing: 5px;
 	}
-
-
 </style>
+<script type="text/javascript">
+	function verify()
+	{
+		var fn = document.getElementById("fn");
+		var ln = document.getElementById("ln");
+   	var email = document.getElementById("email")
+		var gender = document.getElementsByName("gender");
+		var pass = document.getElementById("pass");
+		var mobileno = document.getElementById("mobileno");
+		var msg = new Array();
+		var flag = 1;
+		var message = "Following Details are Required\n";
+		var message2 = "Following Details are Required<br>";
+
+		if(fn == "")
+		{
+			msg[0] = " fn is Required";
+			flag = 0;
+		} else { msg[0] = ""; }
+
+		if(ln.value == "")
+		{
+			msg[1] = " ln is Required";
+			flag = 0;
+		} else { msg[1] = ""; }
+
+		if (email=="") {
+			msg[2] = "Email Is Required"
+		}
+		else{ msg[2] = "";}
+
+		if(gender[0].checked == false && gender[1].checked == false)
+		{
+			msg[3] = "Select Gender";
+			flag = 0;
+		} else { msg[3] = ""; }
+
+		if(pass == "")
+		{
+			msg[4] = "Password is Required";
+			flag = 0;
+		} else { msg[4] = ""; }
+	
+		if(pass.length < 8)
+		{
+			msg[5] = "Password must be 8 characters long";
+			flag = 0;
+		} else { msg[5] = ""; }
+
+		if(mobileno.value.length < 10)
+		{
+			msg[6] = " Mobile no  must be 10 characters long";
+			flag = 0;
+		} else { msg[6] = ""; }
+
+		if(flag == 0)
+		{
+			for(var x=0;x<=6;x++)
+			{
+				if(msg[x] != "")
+				{
+					message += msg[x] + "\n";
+					message2 += msg[x] + "<br>";
+				}
+			}
+			alert(message);
+			document.getElementById("Ulhas Munne").innerHTML = "<p style='color:red;'>"+message2+"</p>";
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+</script>
+</head>
+<body>
 <div align="center">
 	<h1>Registration Form</h1>
     <h3 id="Ulhas Munne"></h3>
@@ -156,11 +141,11 @@ box-shadow: 0 0 .5em #000;
     	<table border="2" cellspacing="0" cellpadding="15">
        <tr>
        	<td>First Name: </td>
-        <td><input type="text" name="name" id="name" size="25" placeholder="Enter First Name" /></td>
+        <td><input type="text" name="name" id="fn" size="25" placeholder="Enter First Name" /></td>
        </tr>
        <tr>
        	<td>Last Name: </td>
-        <td><input type="text" name="name" id="name" size="25" placeholder="Enter Last Name" /></td>
+        <td><input type="text" name="name" id="ln" size="25" placeholder="Enter Last Name" /></td>
        </tr>
        <tr>
        	<td>Email: </td>
@@ -180,7 +165,7 @@ box-shadow: 0 0 .5em #000;
 
           <tr>
         	<td>Mobile NO :</td>
-          <td><input type="texr" name="text" size="25" id="pass" placeholder="Enter Mobile NO " /></td>
+          <td><input type="text" name="text" size="25" id="mobileno" placeholder="Enter Mobile NO " /></td>
           </tr>
           <tr>
             	<td align="center" colspan="3">
